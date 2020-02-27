@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>运动健身类官网&mdash;首页</title>
+    <meta name="description" content="XX健身学院以专业，讲诚信，做口碑为立业之本，我们始终用包容的心态面对每一位学员，不管你有没有健身基础，只要你想学我们一定会耐心教你，直到你学会为止">
+    <meta name="keywords" content="健身，健身基础动作，私教">
+
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!--[if lt IE 9]>
+    <script src="/js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/css/bootstrap.min-202002171538.css">
+    <link rel="stylesheet" href="/css/font-awesome.min-202002171538.css">
+    <link rel="stylesheet" href="/css/animate.min-202002171538.css">
+    <link rel="stylesheet" href="/css/swiper.min-202002171538.css">
+    <link rel="stylesheet" href="/css/slider-pro.min-202002171538.css">
+    <link rel="stylesheet" href="/css/marquee-202002171538.css">
+    <link rel="stylesheet" href="/css/layer.min-202002171538.css">
+    <link rel="stylesheet" href="/css/style-202002171538.css">
+    <link rel="stylesheet" href="/css/font_925836_jkocxsylryr.css">
+    <link rel="stylesheet" href="/css/bootstrap-datepicker-20200217153.css">
+
+    <script src="/js/jquery.min-202002171538.js"></script>
+    <script src="/js/bootstrap.min-202002171538.js"></script>
+    <script src="/js/jquery.lazyload.min-202002171538.js"></script>
+    <script src="/js/wow.min-202002171538.js"></script>
+    <script src="/js/swiper.jquery.min-202002171538.js"></script>
+    <script src="/js/jquery.sliderPro.min-20200217153.js"></script>
+    <script src="/js/layer-202002171538.js"></script>
+    <script src="/js/laydate-202002171538.js"></script>
+    <script src="/js/marquee-202002171538.js"></script>
+    <script type="text/javascript" src="/js/api-2.0_8mDd90m55IFYptT4xHOPpuAB.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-datepicker-20200217153.js"></script>
+
+
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript" src="/js/page.min-202002171538.js"></script>
+    <style>
+        html, body {
+            background-color: transparent;
+        }
+
+        .share {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            bottom: 120px;
+            right: 10px;
+            display: none;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .share i {
+            font-size: 40px;
+        }
+
+        .wechatShare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            opacity: 0.8;
+            display: none;
+            background: #888888;
+        }
+
+        .browserShare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            opacity: 0.7;
+            display: none;
+            text-align: center;
+            background: #000;
+        }
+
+        .browserShare img {
+            margin-top: 150px;
+        }
+
+        .dark {
+            background-color: #333;
+            color: #ccc !important;
+        }
+
+        .dark ul li a {
+            color: #ccc;
+        }
+
+        .light {
+            color: #666;
+            background-color: #f5f5f5;
+        }
+
+        .light ul li a {
+            color: #666;
+        }
+
+        .user-bar {
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            justify-content: space-between;
+        }
+
+        .user-bar ul, .user-bar ul li a {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            justify-content: center
+        }
+
+        .user-bar ul li + li {
+            margin-left: 15px;
+        }
+
+        .user-bar ul li i {
+            margin-right: 5px;
+        }
+
+        .user-btn {
+            width: 60px;
+            height: 60px;
+            position: fixed;
+            z-index: 999;
+            top: 60%;
+            right: 10px;
+        }
+
+        .user-btn img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .share-user-phone {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            font-size: 30px;
+            z-index: 9999;
+            background-color: #fffcfc;
+        }
+
+        .share-user-phone-pc {
+            position: fixed;
+            right: 1px;
+            bottom: 200px;
+            width: 240px;
+            height: 50px;
+            font-size: 30px;
+            z-index: 9999;
+            opacity: 0.8;
+            border-radius: 30px 0;
+            background-color: #fffcfc;
+        }
+
+        .share-user-phone i, .share-user-phone-pc i {
+            font-size: 14px;
+            width: 20px;
+            display: flex;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .share-user-phone-content {
+            width: 100%;
+            height: 100%;
+            background-color: #999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 举报 */
+        .report {
+            height: auto;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #a7a0a0;
+            padding: 5px;
+        }
+
+        .report > * {
+            line-height: 100%;
+        }
+
+        .report img {
+            padding: 0 20px 0 10px;
+        }
+
+        .copyright_span {
+            font-size: 12px;
+            text-align: center;
+            line-height: 16px;
+        }
+
+        /**/
+        .mobile .animated {
+            visibility: hidden;
+            backface-visibility: hidden; /* 加入动画以后莫名其妙的空白 */
+            -webkit-backface-visibility: hidden; /* 加入动画以后莫名其妙的空白 */
+        }
+
+        .top_bank {
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            justify-content: space-between;
+            background: #fff;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .top_bank ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            justify-content: space-between;
+            color: rgba(67, 66, 93, 1);
+        }
+
+        .top_bank_left {
+            width: 86px;
+        }
+
+        .top_bank_right {
+            width: 68px;
+        }
+
+        .friendly_link-pc {
+            width: 1170px;
+        }
+
+        .mobile .friendly_link {
+            width: 100%;
+        }
+
+        .friendly_link {
+            height: auto;
+            font-size: 14px;
+            margin: 10px auto;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .friendly_link p {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .friendly_link div {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .friendly_link a {
+            font-size: 12px;
+            color: #333333;
+            margin-right: 24px;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 320px) and (max-width: 768px) {
+            .friendly_link-mobile {
+                width: 100%;
+                margin: 10px 14px;
+            }
+
+            .friendly_link p {
+                font-size: 12px;
+            }
+
+            .friendly_link a {
+                margin-right: 14px;
+                margin-bottom: 8px;
+            }
+        }
+
+    </style>
+    <style>
+
+        .gw-copyright.fixed-bottom {
+            height: 120px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            width: 100%;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-content {
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            height: 100%;
+            /* background-color:#FFA084; */
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile {
+            height: 60px;
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile .gw-copyright-content {
+            background-size: contain;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-close-box {
+            background-color: #EEEEEE;
+            color: #101010;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-close {
+            font-size: 1.3em;
+            height: 30px;
+            width: 32px;
+            margin: auto 5px;
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile {
+            font-size: 12px;
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile .gw-copyright-close {
+            margin: auto 2px;
+        }
+    </style>
+</head>
+
+<body class="pc">
+<div class="user-bar  dark  ">
+    <ul class="user-bar-left">
+        <li><a href="/login">登录</a></li>
+        <li><a href="/login">注册</a></li>
+    </ul>
+    <ul class="user-bar-right">
+        <li>
+            <a href="" id="phone-website" title="请扫二维码" data-container="body" data-placement="left" data-html="true"
+               data-trigger="hover"
+               data-content="&lt;img src=&quot;http://.xcx.co.ltd/assets/images/guanwei_share02.png&quot; width=&quot;200&quot; height=&quot;200&quot; onload=&quot;this.src=&#039;https://wei.ltd.com/file/qrcode?format=text&amp;data=&#039; + encodeURIComponent(window.location.href)&quot; /&gt;"
+               data-toggle="popover">
+                <i class="iconfont icon-shouji1"></i>手机网站
+            </a>
+        </li>
+        <li><a href="index#/user"><i class="iconfont icon-huiyuan1"></i>会员中心
+        </a></li>
+    </ul>
+</div>
+
+<!--顶部导航-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658996" name="顶部导航"
+     data-anchor-id="anchor-1494551597228-7522"
+     style="background-color:rgb(51, 51, 51);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:88px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-657120-components-images-1515053517102-9085"
+                                     style="top:33px;left:0;width:93px;height:24px;">
+                                    <style>
+                                        #module-657120-components-images-1515053517102-9085 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <a style="" href=""><img class="gw-browse-component-content animated bounceInLeft  "
+                                                             style="width:93px;max-width:none;height:24px;max-height:none;opacity:1;"
+                                                             alt="" src="/picture/15150466286480.png"></a>
+                                </div>
+                            </div>
+                            <div class="nav-component">
+                                <div class="gw-browse-component" id="module-657120-components-nav-1515053517103-3449"
+                                     style="top:0;left:515px;width:651px;height:80px;line-height:80px;">
+                                    <style>
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgba(0, 0, 0, 0);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont {
+                                            margin-left: 0;
+                                            margin-right: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont-row {
+                                            margin-left: 0;
+                                            margin-right: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu {
+                                            font-family: 微软雅黑;
+                                            font-size: 14px;
+                                            font-style: normal;
+                                            font-weight: normal;
+                                            background-color: #FFFFFF;
+                                            color: #666666;
+                                            height: 38px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list {
+                                            position: absolute;
+                                            top: 88px;
+                                            margin-left: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list ul {
+                                            background-color: #FFFFFF;
+                                            line-height: 38px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list-row {
+                                            position: absolute;
+                                            top: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list-row ul {
+                                            background-color: #FFFFFF;
+                                            line-height: 38px !important;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list-row ul li {
+                                            margin-left: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list .triangle_border_up {
+                                            border-bottom-color: #FFFFFF;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu a {
+                                            color: #666666;
+                                            text-decoration: none;
+                                            font-weight: normal;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont:hover .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont-row:hover .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .first-nav-cont:hover .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont:hover {
+                                            margin-left: 0 !important;
+                                            margin-right: 0 !important;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont-row:hover {
+                                            margin-left: 0 !important;
+                                            margin-right: 0 !important;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu:hover {
+                                            background-color: #FFFFFF;
+                                            font-size: 14px;
+                                            height: 38px;
+                                            font-weight: normal;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu:hover a {
+                                            color: #000000;
+                                            font-family: 微软雅黑;
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav.active {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                    </style>
+                                    <div class="module-657120-components-nav-1515053517103-3449 gw-browse-component-content"
+                                         >
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav active" style=""
+                                                                    href="">网站首页</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="guanyuwomen.html">关于我们</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="course.html">私教课程</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="zaixianbaoming.html">在线报名</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="zuixindongtai.html">最新动态</a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--大横幅-->
+<div class="gw-browse-module " data-full="1" data-fixed-position="" id="gw-module-657122" name="大横幅"
+     data-anchor-id="anchor-1515046659221-7695" style="background-repeat:repeat;background-size:auto;height:520px;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;width:100%;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:520px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="carousel-component">
+                                <div class="gw-browse-component"
+                                     id="module-657122-components-carousel-1515046659221-1633" data-full="1"
+                                     style="top:0;left:0;width:100%;height:100%;">
+                                    <div class="gw-browse-component-content" >
+                                        <div class="  swiper-default-container">
+                                            <div id="swiper-container-module-657122-components-carousel-1515046659221-1633"
+                                                 class="swiper-container">
+                                                <div class=" swiper-wrapper">
+                                                    <div class="swiper-slide  ">
+                                                        <div style="background:url(/image/15150465234614.png) no-repeat center center;background-color:rgba(0, 0, 0, 0);width:100%;height:100%;"
+                                                             class="swiper-img"></div>
+                                                    </div>
+                                                    <div class="swiper-slide  "><a target="_self" style="" href="">
+                                                        <div style="background:url(/image/15150466284278.png) no-repeat center center;background-color:rgba(0, 0, 0, 0);width:100%;height:100%;"
+                                                             class="swiper-img"></div>
+                                                    </a></div>
+                                                </div>
+                                                <style>
+                                                    #swiper-pagination-module-657122-components-carousel-1515046659221-1633 .swiper-pagination-bullet {
+                                                        width: 14px;
+                                                        background-color: rgb(255, 192, 1);
+                                                        height: 14px;
+                                                    }
+                                                </style>
+                                                <div class="swiper-pagination"
+                                                     id="swiper-pagination-module-657122-components-carousel-1515046659221-1633"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                var data = {
+                                    "id": "module-657122-components-carousel-1515046659221-1633",
+                                    "direction": "horizontal",
+                                    "effect": "slide",
+                                    "width": "100%",
+                                    "height": "100%",
+                                    "pagination": "1",
+                                    "navigation": "0",
+                                    "autoplay": "1",
+                                    "speed": "2000",
+                                    "full": "1",
+                                    "thumbs": ""
+                                };
+                                if (!data.width) {
+                                    data.width = window.innerWidth;
+                                }
+                                if (!data.height) {
+                                    data.height = window.innerHeight;
+                                }
+                                Swipers.init(data);
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--课程介绍-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-657776" name="课程介绍"
+     data-anchor-id="anchor-1515046823970-8372"
+     style="background-color:rgb(255, 255, 255);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:826px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515046930726-4513"
+                                     style="top:70px;left:337px;width:497px;height:38px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <span>COURSE INTRODCTION</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515046989389-1591"
+                                     style="top:112px;left:510px;width:147px;height:25px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>课程介绍</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047130468-2548"
+                                     style="top:166px;left:144px;width:881px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>如果你体型均称有可塑性，又热爱运动，我们让你成为优秀教练同时拥有完美体型不是梦</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--图一-->
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-657776-components-images-1515047229378-1557"
+                                     style="top:212px;left:0;width:367px;height:400px;">
+                                    <style>
+                                        #module-657776-components-images-1515047229378-1557 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated bounceInUp"
+                                         style="width:367px;max-width:none;height:400px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexServiceInfo.get(0).getPic()}">
+                                </div>
+                            </div>
+                            <!--图二-->
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-657776-components-images-1515047316485-7563"
+                                     style="top:212px;left:399px;width:367px;height:400px;">
+                                    <style>
+                                        #module-657776-components-images-1515047316485-7563 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated bounceInUp"
+                                         style="width:367px;max-width:none;height:400px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexServiceInfo.get(1).getPic()}">
+                                </div>
+                            </div>
+                            <!--图三-->
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-657776-components-images-1515047319528-3625"
+                                     style="top:212px;left:799px;width:367px;height:400px;">
+                                    <style>
+                                        #module-657776-components-images-1515047319528-3625 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated bounceInUp"
+                                         style="width:367px;max-width:none;height:400px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexServiceInfo.get(2).getPic()}">
+                                </div>
+                            </div>
+                            <!--题一-->
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047409571-9167"
+                                     style="top:629px;left:44px;width:279px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexServiceInfo.get(0).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--题二-->
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047451567-6785"
+                                     style="top:629px;left:444px;width:279px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexServiceInfo.get(1).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--题三-->
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047455637-7399"
+                                     style="top:629px;left:844px;width:278px;height:26px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexServiceInfo.get(2).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--内一-->
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047491489-3916"
+                                     style="top:662px;left:20px;width:324px;height:103px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexServiceInfo.get(0).getIntroduction()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--内二-->
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047509925-8477"
+                                     style="top:662px;left:420px;width:324px;height:103px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexServiceInfo.get(1).getIntroduction()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--内三-->
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-657776-components-text-1515047514506-8502"
+                                     style="top:662px;left:823px;width:324px;height:103px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexServiceInfo.get(2).getIntroduction()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-component">
+                                <div class="gw-browse-component" id="module-657776-components-button-1515047537410-6403"
+                                     style="top:785px;left:123px;width:120px;height:40.000003814697px;">
+                                    <div class="gw-browse-component-content animated rubberBand"
+                                         style="width:100%;height:100%;vertical-align:middle;display:table-cell;font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#ffffff;background-color:rgb(255, 192, 1);text-align:center;border-radius:0px;">
+                                        <div style="text-align:center;display:table;width:100%;height:100%;"><a
+                                                style="width:100%;height:100%;display:table-cell;vertical-align:middle;color:#ffffff;"
+                                                href="course.html">MORE+</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-component">
+                                <div class="gw-browse-component" id="module-657776-components-button-1515047576083-5503"
+                                     style="top:785px;left:524px;width:120px;height:40.000003814697px;">
+                                    <div class="gw-browse-component-content animated rubberBand"
+                                         style="width:100%;height:100%;vertical-align:middle;display:table-cell;font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#ffffff;background-color:rgb(255, 192, 1);text-align:center;border-radius:0px;">
+                                        <div style="text-align:center;display:table;width:100%;height:100%;"><a
+                                                style="width:100%;height:100%;display:table-cell;vertical-align:middle;color:#ffffff;"
+                                                href="course.html">MORE+</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-component">
+                                <div class="gw-browse-component" id="module-657776-components-button-1515047580029-6901"
+                                     style="top:785px;left:924px;width:120px;height:40.000003814697px;">
+                                    <div class="gw-browse-component-content animated rubberBand"
+                                         style="width:100%;height:100%;vertical-align:middle;display:table-cell;font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#ffffff;background-color:rgb(255, 192, 1);text-align:center;border-radius:0px;">
+                                        <div style="text-align:center;display:table;width:100%;height:100%;"><a
+                                                style="width:100%;height:100%;display:table-cell;vertical-align:middle;color:#ffffff;"
+                                                href="course.html">MORE+</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--健身教练-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658162" name="健身教练"
+     data-anchor-id="anchor-1515047703096-8958"
+     style="background-color:rgb(255, 255, 255);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:859px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515047703097-7459"
+                                     style="top:70px;left:337px;width:497px;height:38px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <span>TITNESS TRAINER</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515047703098-4584"
+                                     style="top:112px;left:510px;width:147px;height:25px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>健身教练</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515047703098-2437"
+                                     style="top:166px;left:144px;width:881px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>X健身所有课程均有XX讲师以配套视频的形式讲解，并免费上传至网络提供给学员观看。深受广大网友与健美爱好者欢迎</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--图一-->
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515047703098-5162"
+                                     style="top:212px;left:0;width:241px;height:305px;">
+                                    <style>
+                                        #module-658162-components-images-1515047703098-5162 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:241px;max-width:none;height:305px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexCoachInfo.get(0).getPic()}">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515047822381-2759"
+                                     style="top:226px;left:264px;width:218px;height:25px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(0).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515047838221-9578"
+                                     style="top:260px;left:264px;width:297px;height:184px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(0).getFeature()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515047892434-8243"
+                                     style="top:454px;left:264px;width:189px;height:47px;">
+                                    <style>
+                                        #module-658162-components-images-1515047892434-8243 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:189px;max-width:none;height:47px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150479111940.jpg">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515047917013-9627"
+                                     style="top:466px;left:279px;width:156px;height:25px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexCoachInfo.get(0).getExperience()}"></span>年职业经验
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515048032158-4385"
+                                     style="top:212px;left:600px;width:241px;height:305px;">
+                                    <style>
+                                        #module-658162-components-images-1515048032158-4385 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:241px;max-width:none;height:305px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexCoachInfo.get(1).getPic()}">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048061878-6382"
+                                     style="top:226px;left:865px;width:251px;height:24px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(1).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048084760-6404"
+                                     style="top:261px;left:865px;width:297px;height:184px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(1).getFeature()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515048092244-8348"
+                                     style="top:454px;left:865px;width:189px;height:47px;">
+                                    <style>
+                                        #module-658162-components-images-1515048092244-8348 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:189px;max-width:none;height:47px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150479111940.jpg">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048117451-4256"
+                                     style="top:466px;left:882px;width:156px;height:25px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexCoachInfo.get(1).getExperience()}"></span>年职业经验
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515048168150-6929"
+                                     style="top:551px;left:0;width:241px;height:305px;">
+                                    <style>
+                                        #module-658162-components-images-1515048168150-6929 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:241px;max-width:none;height:305px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexCoachInfo.get(2).getPic()}">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048174333-4718"
+                                     style="top:563px;left:264px;width:217px;height:26px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(2).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048179993-9054"
+                                     style="top:597px;left:264px;width:297px;height:184px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(2).getFeature()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515048197735-8912"
+                                     style="top:795px;left:264px;width:189px;height:47px;">
+                                    <style>
+                                        #module-658162-components-images-1515048197735-8912 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:189px;max-width:none;height:47px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150479111940.jpg">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048220074-8561"
+                                     style="top:806px;left:279px;width:156px;height:25px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexCoachInfo.get(2).getExperience()}"></span>年职业经验
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515048238716-7446"
+                                     style="top:551px;left:600px;width:241px;height:305px;">
+                                    <style>
+                                        #module-658162-components-images-1515048238716-7446 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:241px;max-width:none;height:305px;max-height:none;opacity:1;"
+                                         alt="" th:src="${indexCoachInfo.get(3).getPic()}">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048271712-7307"
+                                     style="top:563px;left:865px;width:217px;height:26px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(3).getName()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048277113-2314"
+                                     style="top:597px;left:865px;width:297px;height:184px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span th:text="${indexCoachInfo.get(3).getFeature()}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658162-components-images-1515048304121-8527"
+                                     style="top:795px;left:865px;width:189px;height:47px;">
+                                    <style>
+                                        #module-658162-components-images-1515048304121-8527 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:189px;max-width:none;height:47px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150479111940.jpg">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658162-components-text-1515048323914-3468"
+                                     style="top:806px;left:882px;width:156px;height:25px;">
+                                    <div class="gw-browse-component-content animated bounceInRight"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span th:text="${indexCoachInfo.get(3).getExperience()}"></span>年职业经验
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--校区介绍-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658576" name="校区介绍"
+     data-anchor-id="anchor-1515049032653-5083"
+     style="background-color:rgb(255, 255, 255);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:668px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049032653-9795"
+                                     style="top:70px;left:337px;width:497px;height:38px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <span>CAMPUS INTRODCTION  </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049032653-1348"
+                                     style="top:112px;left:510px;width:147px;height:25px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>校区介绍</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049032653-7654"
+                                     style="top:166px;left:144px;width:879px;height:48px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>XX健身学院以专业，讲诚信，做口碑为立业之本，我们始终用包容的心态面对每一位学员，不管你有没有健身基础，只要你想学我们一定会耐心教你，直到你学会为止</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658576-components-images-1515049103322-6642"
+                                     style="top:237px;left:0;width:570px;height:300px;">
+                                    <style>
+                                        #module-658576-components-images-1515049103322-6642 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated rubberBand"
+                                         style="width:570px;max-width:none;height:300px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150492005370.jpg">
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658576-components-images-1515049137088-5383"
+                                     style="top:237px;left:598px;width:570px;height:300px;">
+                                    <style>
+                                        #module-658576-components-images-1515049137088-5383 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated rubberBand"
+                                         style="width:570px;max-width:none;height:300px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150492007808.jpg">
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049234743-4729"
+                                     style="top:548px;left:0;width:95px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>深圳校区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049251859-3195"
+                                     style="top:548px;left:598px;width:95px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(51, 51, 51);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>上海校区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divide-component">
+                                <div class="gw-browse-component" id="module-658576-components-divide-1515049333326-4687"
+                                     style="top:570px;left:0;width:570px;height:26px;">
+                                    <div class="gw-browse-component-content"
+                                         style="border-color:rgb(204, 204, 204);border-bottom-style:solid;border-width:1px;height:13.5px;"></div>
+                                </div>
+                            </div>
+                            <div class="divide-component">
+                                <div class="gw-browse-component" id="module-658576-components-divide-1515049359854-4864"
+                                     style="top:570px;left:598px;width:570px;height:26px;">
+                                    <div class="gw-browse-component-content"
+                                         style="border-color:rgb(204, 204, 204);border-bottom-style:solid;border-width:1px;height:13.5px;"></div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049382139-2673"
+                                     style="top:589px;left:0;width:84px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>培训地址:</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049411745-8350"
+                                     style="top:589px;left:598px;width:84px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>培训地址:</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049435865-1937"
+                                     style="top:589px;left:65px;width:143px;height:24px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>浙江省西湖区紫霞街</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049455779-8158"
+                                     style="top:589px;left:665px;width:136px;height:24px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>浙江省西湖区紫霞街</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049524335-5130"
+                                     style="top:616px;left:0;width:568px;height:53px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>结合国际健身健美技术以及健身房需求、私教职业发展等因素升级了2016年全新课程，以适应私教发展需求。保证所教课程具备竞争力</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658576-components-text-1515049550108-3263"
+                                     style="top:616px;left:598px;width:568px;height:53px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>结合国际健身健美技术以及健身房需求、私教职业发展等因素升级了2016年全新课程，以适应私教发展需求。保证所教课程具备竞争力</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--学校环境-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658752" name="学校环境"
+     data-anchor-id="anchor-1515049604487-7775"
+     style="background-color:rgb(255, 255, 255);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:413px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658752-components-text-1515049604487-4707"
+                                     style="top:70px;left:337px;width:497px;height:38px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <span>SCHOOL ENVIRONMENT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658752-components-text-1515049604487-8198"
+                                     style="top:112px;left:510px;width:147px;height:25px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>学校环境</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658752-components-text-1515049604487-5724"
+                                     style="top:166px;left:144px;width:881px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>为学员提供更加优秀的教学环境</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658752-components-images-1515049604487-6162"
+                                     style="top:212px;left:0;width:367px;height:196.19049072266px;">
+                                    <style>
+                                        #module-658752-components-images-1515049604487-6162 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated flipInX"
+                                         style="width:367px;max-width:none;height:196.19049072266px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150500715356.jpg">
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658752-components-images-1515049993934-8308"
+                                     style="top:212px;left:401px;width:367px;height:196.19049072266px;">
+                                    <style>
+                                        #module-658752-components-images-1515049993934-8308 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated flipInX"
+                                         style="width:367px;max-width:none;height:196.19049072266px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150500713318.jpg">
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658752-components-images-1515049998420-7413"
+                                     style="top:212px;left:801px;width:367px;height:196.19049072266px;">
+                                    <style>
+                                        #module-658752-components-images-1515049998420-7413 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated flipInX"
+                                         style="width:367px;max-width:none;height:196.19049072266px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150500718257.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--最新动态-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658978" name="最新动态"
+     data-anchor-id="anchor-1515050774456-6547"
+     style="background-color:rgb(255, 255, 255);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:835px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658978-components-text-1515050774456-4972"
+                                     style="top:70px;left:337px;width:497px;height:38px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <span>NEW</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658978-components-text-1515050774457-5186"
+                                     style="top:112px;left:510px;width:147px;height:25px;">
+                                    <div class="gw-browse-component-content animated swing"
+                                         style="font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>最新动态</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658978-components-text-1515050774457-5952"
+                                     style="top:166px;left:144px;width:881px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:14px;font-weight:normal;font-style:normal;color:rgb(102, 102, 102);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>关注我们每一个飞跃，成就自己每一次进步</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658978-components-images-1515050774457-9569"
+                                     style="top:212px;left:0;width:566px;height:265px;">
+                                    <style>
+                                        #module-658978-components-images-1515050774457-9569 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated bounce"
+                                         style="width:566px;max-width:none;height:265px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150508772314.jpg">
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658978-components-images-1515050847959-2478"
+                                     style="top:212px;left:602px;width:566px;height:265px;">
+                                    <style>
+                                        #module-658978-components-images-1515050847959-2478 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content animated bounce"
+                                         style="width:566px;max-width:none;height:265px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15150508778242.jpg">
+                                </div>
+                            </div>
+                            <div class="article-component">
+                                <div class="gw-browse-component gw-dynamic-component"
+                                     id="module-658978-components-article-1515050904205-1624"
+                                     style="top:493px;left:0;width:1167px;height:221.96429443359px;">
+                                    <div class="gw-browse-component-content row">
+                                        <div class="col-xs-12 article_style_4">
+                                            <a href="51520.html" target="_blank">
+                                                <div>
+                                                    <span style="float:left;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_title">有利于促进肌肉恢复生长的脂肪，你了解吗？</span>
+                                                    <span style="float:right;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_date">2018-01-04</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 article_style_4">
+                                            <a href="51518.html" target="_blank">
+                                                <div>
+                                                    <span style="float:left;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_title">健身之于每个人，是属于自己奖赏给自己的额外礼物</span>
+                                                    <span style="float:right;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_date">2018-01-04</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 article_style_4">
+                                            <a href="51516.html" target="_blank">
+                                                <div>
+                                                    <span style="float:left;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_title">健身改变人生</span>
+                                                    <span style="float:right;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_date">2018-01-04</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 article_style_4">
+                                            <a href="51514.html" target="_blank">
+                                                <div>
+                                                    <span style="float:left;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_title">轮滑，最经济有效的健身</span>
+                                                    <span style="float:right;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_date">2018-01-04</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 article_style_4">
+                                            <a href="51512.html" target="_blank">
+                                                <div>
+                                                    <span style="float:left;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_title">如何找到靠谱的健身教练</span>
+                                                    <span style="float:right;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_date">2018-01-04</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 article_style_4">
+                                            <a href="51510.html" target="_blank">
+                                                <div>
+                                                    <span style="float:left;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_title">5个小方法让你的训练更加刺激更有效</span>
+                                                    <span style="float:right;font-size:14px;font-family:微软雅黑;font-style:normal;color:rgb(102, 102, 102);"
+                                                          class="article_date">2018-01-04</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="button-component">
+                                <div class="gw-browse-component" id="module-658978-components-button-1515050951732-4865"
+                                     style="top:750px;left:526px;width:120px;height:40.000003814697px;">
+                                    <div class="gw-browse-component-content animated rubberBand"
+                                         style="width:100%;height:100%;vertical-align:middle;display:table-cell;font-family:微软雅黑;font-size:18px;font-weight:normal;font-style:normal;text-decoration:none;color:#ffffff;background-color:rgb(255, 192, 1);text-align:center;border-radius:0px;">
+                                        <div style="text-align:center;display:table;width:100%;height:100%;"><a
+                                                style="width:100%;height:100%;display:table-cell;vertical-align:middle;color:#ffffff;"
+                                                href="zuixindongtai.html">MORE+</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--我要咨询-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658980" name="我要咨询"
+     data-anchor-id="anchor-1515051037340-7566"
+     style="background-color:rgb(255, 255, 255);background-image:url(/image/15150510432274.jpg);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:285px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658980-components-images-1515051052902-8266"
+                                     style="top:70px;left:399px;width:96px;height:96px;">
+                                    <style>
+                                        #module-658980-components-images-1515051052902-8266 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <a style="" href="zaixianbaoming.html"><img class="gw-browse-component-content"
+                                                                                style="width:96px;max-width:none;height:96px;max-height:none;opacity:1;"
+                                                                                alt=""
+                                                                                src="/picture/15150510807006.png"></a>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658980-components-images-1515051071015-3613"
+                                     style="top:70px;left:631px;width:96px;height:96.190483093262px;">
+                                    <style>
+                                        #module-658980-components-images-1515051071015-3613 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <a style="" href="zaixianbaoming.html"><img class="gw-browse-component-content"
+                                                                                style="width:96px;max-width:none;height:96.190483093262px;max-height:none;opacity:1;"
+                                                                                alt=""
+                                                                                src="/picture/15150510802510.png"></a>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658980-components-text-1515051119747-3110"
+                                     style="top:180px;left:362px;width:169px;height:36px;">
+                                    <div class="gw-browse-component-content animated bounceInUp"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <a style="color:rgb(255, 192, 1);" href="zaixianbaoming.html">我要咨询</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658980-components-text-1515051154211-7266"
+                                     style="top:180px;left:595px;width:169px;height:36px;">
+                                    <div class="gw-browse-component-content animated bounceInUp"
+                                         style="font-family:微软雅黑;font-size:35px;font-weight:normal;font-style:normal;color:rgb(255, 192, 1);background-color:transparent;line-height:35px;text-decoration:none;text-align:center;">
+                                        <a style="color:rgb(255, 192, 1);" href="zaixianbaoming.html">我要预订</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部导航-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-659026" name="底部导航"
+     data-anchor-id="anchor-1503022110773-3244"
+     style="background-color:rgb(51, 51, 51);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:322px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515053277141-9341"
+                                     style="top:118px;left:287px;width:153px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>上海校区培训地址：</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515053277141-1512"
+                                     style="top:148px;left:287px;width:90px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>咨询电话：</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515053277141-5193"
+                                     style="top:118px;left:429px;width:259px;height:23px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <a target="_blank" style="color:rgb(255, 255, 255);" href="javascript:;"
+                                           class="gw-nav">XXX省XXX市XXX县XXX路XXX号</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-658994-components-images-1515053277141-2371"
+                                     style="top:47px;left:0;width:200px;height:200px;">
+                                    <style>
+                                        #module-658994-components-images-1515053277141-2371 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <img class="gw-browse-component-content"
+                                         style="width:200px;max-width:none;height:200px;max-height:none;opacity:1;"
+                                         alt="" src="/picture/15030233403083.jpg">
+                                </div>
+                            </div>
+                            <div class="nav-component">
+                                <div class="gw-browse-component" id="module-658994-components-nav-1515405431289-1061"
+                                     style="top:62px;left:288px;width:487px;height:25px;line-height:25px;">
+                                    <style>
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav {
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            text-align: center;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav-cont {
+                                            margin-left: 0;
+                                            margin-right: 30px;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav-cont-row {
+                                            margin-left: 0;
+                                            margin-right: 30px;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .sec-menu {
+                                            font-family: 微软雅黑;
+                                            font-size: 14px;
+                                            font-style: normal;
+                                            font-weight: normal;
+                                            background-color: #FFFFFF;
+                                            color: #666666;
+                                            height: 38px;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .menu-list {
+                                            position: absolute;
+                                            margin-left: 0;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .menu-list ul {
+                                            background-color: #FFFFFF;
+                                            line-height: 38px;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .menu-list-row {
+                                            position: absolute;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .menu-list-row ul {
+                                            background-color: #FFFFFF;
+                                            line-height: 38px !important;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .menu-list-row ul li {
+                                            margin-left: 0;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .menu-list .triangle_border_up {
+                                            border-bottom-color: #FFFFFF;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .sec-menu a {
+                                            color: #666666;
+                                            text-decoration: none;
+                                            font-weight: normal;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav-cont:hover .gw-nav {
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 192, 1);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            text-align: center;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav-cont-row:hover .gw-nav {
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 192, 1);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            text-align: center;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .first-nav-cont:hover .gw-nav {
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 192, 1);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            text-align: center;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav-cont:hover {
+                                            margin-left: 0 !important;
+                                            margin-right: 30px !important;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav-cont-row:hover {
+                                            margin-left: 0 !important;
+                                            margin-right: 30px !important;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .sec-menu:hover {
+                                            background-color: #FFFFFF;
+                                            font-size: 14px;
+                                            height: 38px;
+                                            font-weight: normal;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .sec-menu:hover a {
+                                            color: #000000;
+                                            font-family: 微软雅黑;
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                        }
+
+                                        #module-658994-components-nav-1515405431289-1061 .gw-nav.active {
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 192, 1);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            text-align: center;
+                                        }
+
+                                    </style>
+                                    <div class="module-658994-components-nav-1515405431289-1061 gw-browse-component-content"
+                                         style="background-color: transparent">
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="">网站首页</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="guanyuwomen.html">关于我们</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="course.html">私教课程</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="zaixianbaoming.html">在线报名</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="zuixindongtai.html">最新动态</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divide-component">
+                                <div class="gw-browse-component" id="module-658994-components-divide-1515405573527-6174"
+                                     style="top:91px;left:287px;width:863px;height:26px;">
+                                    <div class="gw-browse-component-content"
+                                         style="border-color:rgb(102, 102, 102);border-bottom-style:solid;border-width:1px;height:13.5px;"></div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405678084-6736"
+                                     style="top:117px;left:723px;width:153px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>深圳校区培训地址：</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405686972-1452"
+                                     style="top:117px;left:864px;width:262px;height:23px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <a target="_blank" style="color:rgb(255, 255, 255);" href="javascript:;"
+                                           class="gw-nav">XXX省XXX市XXX县XXX路XXX号</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405740100-7297"
+                                     style="top:148px;left:369px;width:168px;height:23px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>0571-22222222</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405751690-1136"
+                                     style="top:148px;left:723px;width:93px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>咨询电话：</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405806909-1927"
+                                     style="top:148px;left:802px;width:130px;height:23px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>0571-22222222</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405838232-7026"
+                                     style="top:176px;left:287px;width:119px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>18888888888</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405883759-1847"
+                                     style="top:206px;left:287px;width:119px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>18888888888</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405904139-4011"
+                                     style="top:176px;left:401px;width:76px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>尧老师</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405965245-1779"
+                                     style="top:206px;left:401px;width:76px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>赵老师</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515405996742-4213"
+                                     style="top:179px;left:720px;width:119px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>18888888888</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515406001170-1872"
+                                     style="top:206px;left:720px;width:118px;height:26px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>18888888888</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515406137957-6884"
+                                     style="top:176px;left:834px;width:76px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>杨老师</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515406160060-8522"
+                                     style="top:206px;left:834px;width:76px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:left;">
+                                        <span>朱老师</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-component">
+                                <div class="gw-browse-component" id="module-658994-components-text-1515406201771-8224"
+                                     style="top:256px;left:15px;width:169px;height:25px;">
+                                    <div class="gw-browse-component-content "
+                                         style="font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:rgb(255, 255, 255);background-color:transparent;line-height:26px;text-decoration:none;text-align:center;">
+                                        <span>微信咨询更快捷</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 微信弹出二维码模态框 -->
+<div class="modal fade gw-modal wechatModal" id="myWechatModal" tabindex="-1" role="dialog">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img class="wechat-img" src="/picture/qrcode-202002171538.jpg">
+            </div>
+            <p class="wechat-tips tips-mobile">长按屏幕识别二维码</p>
+            <p class="wechat-tips tips-pc">打开手机扫描二维码</p>
+        </div>
+    </div>
+</div>
+
+<!-- 表单弹出窗口模态框 -->
+
+
+<!-- 视频弹出窗口播放模态框 -->
+<div class="modal fade gw-modal videoModal" id="myVideoModal" tabindex="-1" role="dialog">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe class="video-iframe" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 图片弹出模态框 -->
+<div class="imageModal">
+    <div class="img-content"><img class="img-dialog" src="/picture/qrcode-202002171538.jpg"></div>
+
+</div>
+
+<!-- 站点统计代码 -->
+
+
+<div class="report-mobile report-pc report">
+        <span class="copyright_span">版权所有 ©<span>                    私教健身房
+                </span></span>
+    <img src="/picture/guan-202002171538.png" alt="" height="17" style="padding: 0 4px 0 10px;">
+    <span style="font-size:12px">认证官网</span>
+    <img src="/picture/ring-202002171538.png" alt="" height="12" style="padding-right:4px">
+    <span style="font-size:12px;cursor:pointer" id="report-click">举报反馈</span>
+</div>
+
+
+<!-- 任意html代码 -->
+
+<!-- 页面级自定义代码 -->
+
+
+<!-- 友链 -->
+
+<!-- 分享 -->
+<div class="share">
+    <i class="iconfont icon-fenxiang"></i>
+</div>
+<div class="share-phone">
+    <span></span>
+</div>
+<div class="wechatShare">
+    <img src="" alt="" style="width:100%;">
+</div>
+<div class="browserShare">
+    <img src="/picture/wshare-202002171538.png" alt="" style="width:200px;">
+</div>
+<script src="/js/jweixin-1.4.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var shareImg = ''
+        var config = {}
+        var websiteTitle = ''
+        var websiteLogo = ''
+        var description = ''
+        var uid = ''
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+            getWebsiteInfo()
+            $('.share').on('click', function () {
+                share()
+            })
+            $('.browserShare').on('click', function () {
+                $('.browserShare').css('display', 'none')
+            })
+
+            $('.wechatShare').on('click', function () {
+                $('.wechatShare').css('display', 'none')
+            })
+            $('#report-click').on('click', function () {
+                location.href = '/report'
+            })
+        })
+
+        // 获取微信config
+        function getWechatInfo() {
+            $.ajax({
+                url: '/gzh/self/jsInfo',
+                headers: {
+                    "Gw-Shop-User-Token": window.localStorage.getItem("GwShopUserToken")
+                },
+                data: {
+                    url: window.location.href
+                },
+                type: 'get',
+                success: function (res) {
+                    if (res.code === 0) {
+                        config = JSON.parse(res.data.jsInfo)
+                        wechatShare()
+                    }
+                }
+            })
+        }
+
+        function getUserInfo() {
+            var token = window.localStorage.getItem("GwShopUserToken") ? window.localStorage.getItem("GwShopUserToken") : ''
+            if (token) {
+                $.ajax({
+                    url: '/shop/frontend/share/isshare',
+                    headers: {
+                        "Gw-Shop-User-Token": token
+                    },
+                    dataType: 'json',
+                    type: 'get',
+                    success: function (res) {
+                        if (res.code === 0) {
+                            if (res.data.is_share == 1) {
+                                //开启分享
+                                shareImg = res.data.share_url
+                                $('.share').css('display', 'block')
+                                getWechatInfo()
+                            } else {
+                                $('.share').css('display', 'none')
+                            }
+                        }
+                    }
+                })
+            }
+        }
+
+        function getWebsiteInfo() {
+            $.ajax({
+                url: '/shop/user/me/getProfile',
+                type: 'get',
+                success: function (res) {
+                    if (res.code == 0) {
+                        uid = res.data.u_id
+                        websiteLogo = res.data.website.company_logo.url
+                        websiteTitle = res.data.website.name
+                        description = res.data.tdk.description
+                        getUserInfo()
+                    }
+                }
+            })
+        }
+
+        function share() {
+            let browser = {
+                versions: (function () {
+                    let u = navigator.userAgent
+                    return {
+                        // 移动终端浏览器版本信息
+                        trident: u.indexOf('Trident') > -1, // IE内核
+                        presto: u.indexOf('Presto') > -1, // opera内核
+                        webKit: u.indexOf('AppleWebKit') > -1, // 苹果、谷歌内核
+                        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') === -1, // 火狐内核
+                        mobile: !!u.match(/AppleWebKit.*Mobile.*/), // 是否为移动终端
+                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // os终端
+                        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, // android终端或uc浏览器
+                        iPhone: u.indexOf('iPhone') > -1, // 是否为iPhone或者QQHD浏览器
+                        iPad: u.indexOf('iPad') > -1, // 是否iPad
+                        webApp: u.indexOf('Safari') === -1 // 是否web应该程序，没有头部与底部
+                    }
+                })(),
+                language: (navigator.browserLanguage || navigator.language).toLowerCase()
+            }
+            if (browser.versions.mobile) { // 判断是否是移动设备打开
+                let ua = navigator.userAgent.toLowerCase() // 获取判断用的对象
+                if (ua.match(/MicroMessenger/i) == 'micromessenger' || ua.match(/WeiBo/i) == 'weibo') {
+                    $('.wechatShare img').attr('src', '/images/wshare.png')
+                    $('.wechatShare').css('display', 'block')
+                } else if (ua.match(/QQ/i) == 'qq') {
+                    $('.wechatShare img').attr('src', '/images/wshare.png')
+                    $('.wechatShare').css('display', 'block')
+                } else {
+                    $('.browserShare img').attr('src', shareImg)
+                    $('.browserShare').css('display', 'block')
+                }
+            } else {
+                // 否则就是PC浏览器打开
+                $('.browserShare img').attr('src', shareImg)
+                $('.browserShare').css('display', 'block')
+            }
+        }
+
+        function wechatShare() {
+            wx.config({
+                debug: config.debug, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: config.appId, // 必填，公众号的唯一标识
+                timestamp: config.timestamp, // 必填，生成签名的时间戳
+                nonceStr: config.nonceStr, // 必填，生成签名的随机串
+                signature: config.signature, // 必填，签名
+                jsApiList: config.jsApiList // 必填，需要使用的JS接口列表
+            })
+            wx.ready(function () { // 需在用户可能点击分享按钮前就先调用
+                wx.updateAppMessageShareData({
+                    title: websiteTitle, // 分享标题
+                    desc: description, // 分享描述
+                    link: 'http://' + location.host + '/?u=' + uid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: websiteLogo // 分享图标
+                })
+                wx.onMenuShareAppMessage({
+                    title: websiteTitle, // 分享标题
+                    desc: description, // 分享描述
+                    link: 'http://' + location.host + '/?u=' + uid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: websiteLogo, // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '' // 如果type是music或video，则要提供数据链接，默认为空
+                })
+                wx.onMenuShareQQ({
+                    title: websiteTitle, // 分享标题
+                    desc: description, // 分享描述
+                    link: 'http://' + location.host + '/?u=' + uid, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: websiteLogo // 分享图标
+                })
+            })
+        }
+    });
+
+</script>
+<!-- 官网统计代码 -->
+<script type="text/javascript" src="/js/analyst-202002171538.js"></script>
+<script type="text/javascript">
+    _ga.url = 'https://wei.ltd.com/analyst';
+    _ga.params['wi'] = '3';
+    _ga.params['ui'] = '0';
+    _ga.init(5622);
+</script>
+<script>
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    var url = window.location.href
+    if (url.indexOf("?") != -1) {
+        var id = GetQueryString('recommend')
+        localStorage.setItem("recommend_id", id)
+    }
+    if (localStorage.getItem('GwShopUserToken')) {
+        $('.user-btn').attr('href', '/shop/#/user')
+    }
+</script>
+
+<script>
+    if ('WebSocket' in window) {
+        var url = 'wss://ws.ltd.com/9051';
+        socket = new WebSocket(url);
+        socket.onopen = function () {
+            var gmac = _ga.getCookie('gmac');
+            socket.send(JSON.stringify({
+                "cmd": "hello",
+                "params": {
+                    "referer": window.location.href,
+                    "gmac": gmac ? gmac : '',
+                    "request_id": "ec84e76cdb1d79700b2ef718fb15166d",
+                    "website_id": "5622"
+                }
+            }));
+
+            if (!gmac) {
+                //ga的cookie还没来得及设置，延迟再发一次hello
+                setTimeout(function () {
+                    socket.send(JSON.stringify({
+                        "cmd": "hello",
+                        "params": {
+                            "gmac": _ga.getCookie('gmac'),
+                        }
+                    }));
+                }, 1000);
+            }
+
+            setInterval(function () {
+                socket.send(JSON.stringify({
+                    "cmd": "ping"
+                }));
+            }, 30000);
+        }
+
+        $('a').on('click', function () {
+            //记录浏览器跳转
+            socket.send(JSON.stringify({
+                "cmd": "jump",
+                "params": {
+                    "href": $(this).attr('href'),
+                }
+            }));
+        }).on('mousedown', function (e) {
+            if (e.button === 1) {
+                //中键打开新页面，click时间获取不到
+                socket.send(JSON.stringify({
+                    "cmd": "jump",
+                    "params": {
+                        "href": $(this).attr('href'),
+                    }
+                }));
+            }
+        })
+    }
+
+</script>
+<script>
+    var _data = {
+        "657120": {"index": 0, "id": 657120, "html": ""},
+        "657122": {"index": 1, "id": 657122, "html": ""},
+        "657776": {"index": 2, "id": 657776, "html": ""},
+        "658162": {"index": 3, "id": 658162, "html": ""},
+        "658576": {"index": 4, "id": 658576, "html": ""},
+        "658752": {"index": 5, "id": 658752, "html": ""},
+        "658978": {"index": 6, "id": 658978, "html": ""},
+        "658980": {"index": 7, "id": 658980, "html": ""},
+        "658994": {"index": 8, "id": 658994, "html": ""},
+        "656596": {"index": 9, "id": 656596, "html": ""}
+    };
+    for (var item in _data) {
+        //请求module的html的值 将less 转成css
+        if (_data[item].html) {
+            // //塞入当前模块即时生效
+            $("#gw-module-" + _data[item].id).append(" <style> " + _data[item].html + "</style>");
+        }
+    }
+
+    $('.laydate-year').each(function () {
+        laydate.render({
+            elem: this
+            , zIndex: '198910161'
+            , theme: '#49A7E0'
+        });
+    });
+
+    $('.laydate-year-range').each(function () {
+        laydate.render({
+            elem: this
+            , range: true
+            , zIndex: '198910161'
+            , theme: '#49A7E0'
+            , ready: function () {
+                if (window.screen.width <= 480) {
+                    var top = '50px';
+                    if (window.screen.height < 600) {
+                        top = '-5px';
+                        $('.layui-laydate-content').css({padding: '5px 10px'})
+                    }
+                    $('.layui-laydate-range').css({left: '50%', top: top, marginLeft: '-137px', width: '250px'});
+                    $('.layui-laydate-main').css({display: 'block'})
+                }
+            }
+        });
+    });
+
+    $('.gw-copyright-close-box').on('click', function () {
+        $('.gw-copyright').addClass('hidden');
+    });
+    //底部广告幻灯片
+    new Swiper('.swiper-container.gw-copyright-swiper', {
+        effect: 'fade',
+        autoplay: 3000,//可选选项，自动滑动
+        loop: true
+    })
+
+</script>
+
+</body>
+</html>
