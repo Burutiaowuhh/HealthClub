@@ -23,6 +23,7 @@ public class CoursePlanController {
     public String getcourseplan(Model model){
         List<Course_planDTO> course_planDTOS = courseService.getcourseplan();
         model.addAttribute("course_planDTOS",course_planDTOS);
+        model.addAttribute("ad","11");
         return "course";
     }
 
