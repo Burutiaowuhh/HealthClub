@@ -17,6 +17,8 @@ public class Course_planDTO {
     private Integer endTime;
     private Integer term;
     private Double price;
-    private boolean isexpired;
+    private Boolean isexpired;
     private String pic;
+    private String course_name;
+    private String course_introduction;
 }
