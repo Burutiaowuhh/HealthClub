@@ -717,7 +717,9 @@
                             <div class="course_content">
                                 <div class="content" th:each="course_plan:${course_planDTOS}">
                                     <div class="pull-left imgdiv">
-                                        <img class="img" th:src="${course_plan.getPic()}">
+                                        <a th:href="@{/course_info(course_planId=${course_plan.getId()})}">
+                                            <img class="img" th:src="${course_plan.getPic()}">
+                                        </a>
                                     </div>
                                     <div class="right_content">
                                         <div class="animated bounceInRight course_title">

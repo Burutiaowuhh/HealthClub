@@ -2,12 +2,13 @@ package com.mao.healthclub.dto;
 
 import com.mao.healthclub.model.Coach;
 import com.mao.healthclub.model.Course_plan;
+import com.mao.healthclub.model.Service;
 import lombok.Data;
 
 import java.sql.Date;
 
 @Data
-public class Course_planDTO {
+public class Course_planInfoDTO {
 
     private Integer id;
     private Integer serviceId;
@@ -19,8 +20,7 @@ public class Course_planDTO {
     private Integer endTime;
     private Integer term;
     private Double price;
-    private String pic;
-    private String course_name;
-    private String course_introduction;
     private Boolean isexpired;
+    private Service service;
+    private Coach coach;
 }

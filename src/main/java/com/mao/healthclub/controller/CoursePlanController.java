@@ -1,9 +1,6 @@
 package com.mao.healthclub.controller;
 
-import com.mao.healthclub.dto.Course_planDTO;
-import com.mao.healthclub.dto.IndexCoachDTO;
-import com.mao.healthclub.dto.IndexServiceDTO;
-import com.mao.healthclub.dto.PaginationDTO;
+import com.mao.healthclub.dto.*;
 import com.mao.healthclub.service.CourseService;
 import com.mao.healthclub.service.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +27,11 @@ public class CoursePlanController {
         return "course";
     }
 
+    @RequestMapping("/course_info")
+    public String course_plan_info(Model model,
+                                   @RequestParam("course_planId") Integer course_planId){
+        Course_planInfoDTO course_planInfoDTO = courseService.getcourseplanInfo(course_planId);
+        System.out.println(course_planInfoDTO);
+        return "course_info";
+    }
 }
