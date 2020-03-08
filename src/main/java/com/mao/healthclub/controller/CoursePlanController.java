@@ -31,7 +31,7 @@ public class CoursePlanController {
     public String course_plan_info(Model model,
                                    @RequestParam("course_planId") Integer course_planId){
         Course_planInfoDTO course_planInfoDTO = courseService.getcourseplanInfo(course_planId);
-        System.out.println(course_planInfoDTO);
+        model.addAttribute("course_planInfoDTO",course_planInfoDTO);
         return "course_info";
     }
 }

@@ -5,12 +5,625 @@
     <title>Title</title>
 
     <link rel="stylesheet" href="bootstrap3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style-202002171538.css">
+    <link rel="stylesheet" href="css/healthclub.css">
 
     <script type="application/javascript" src="bootstrap3/js/jquery.min.js"></script>
     <script type="application/javascript" src="bootstrap3/js/bootstrap.min.js"></script>
+    <style>
+        html, body {
+            background-color: transparent;
+        }
 
+        .share {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            bottom: 120px;
+            right: 10px;
+            display: none;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .share i {
+            font-size: 40px;
+        }
+
+        .wechatShare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            opacity: 0.8;
+            display: none;
+            background: #888888;
+        }
+
+        .browserShare {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            opacity: 0.7;
+            display: none;
+            text-align: center;
+            background: #000;
+        }
+
+        .browserShare img {
+            margin-top: 150px;
+        }
+
+        .dark {
+            background-color: #333;
+            color: #ccc !important;
+        }
+
+        .dark ul li a {
+            color: #ccc;
+        }
+
+        .light {
+            color: #666;
+            background-color: #f5f5f5;
+        }
+
+        .light ul li a {
+            color: #666;
+        }
+
+        .user-bar {
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            justify-content: space-between;
+        }
+
+        .user-bar ul, .user-bar ul li a {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            justify-content: center
+        }
+
+        .user-bar ul li + li {
+            margin-left: 15px;
+        }
+
+        .user-bar ul li i {
+            margin-right: 5px;
+        }
+
+        .user-btn {
+            width: 60px;
+            height: 60px;
+            position: fixed;
+            z-index: 999;
+            top: 60%;
+            right: 10px;
+        }
+
+        .user-btn img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .share-user-phone {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            font-size: 30px;
+            z-index: 9999;
+            background-color: #fffcfc;
+        }
+
+        .share-user-phone-pc {
+            position: fixed;
+            right: 1px;
+            bottom: 200px;
+            width: 240px;
+            height: 50px;
+            font-size: 30px;
+            z-index: 9999;
+            opacity: 0.8;
+            border-radius: 30px 0;
+            background-color: #fffcfc;
+        }
+
+        .share-user-phone i, .share-user-phone-pc i {
+            font-size: 14px;
+            width: 20px;
+            display: flex;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .share-user-phone-content {
+            width: 100%;
+            height: 100%;
+            background-color: #999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 举报 */
+        .report {
+            height: auto;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #a7a0a0;
+            padding: 5px;
+        }
+
+        .report > * {
+            line-height: 100%;
+        }
+
+        .report img {
+            padding: 0 20px 0 10px;
+        }
+
+        .copyright_span {
+            font-size: 12px;
+            text-align: center;
+            line-height: 16px;
+        }
+
+        /**/
+        .mobile .animated {
+            visibility: hidden;
+            backface-visibility: hidden; /* 加入动画以后莫名其妙的空白 */
+            -webkit-backface-visibility: hidden; /* 加入动画以后莫名其妙的空白 */
+        }
+
+        .top_bank {
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            justify-content: space-between;
+            background: #fff;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .top_bank ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            justify-content: space-between;
+            color: rgba(67, 66, 93, 1);
+        }
+
+        .top_bank_left {
+            width: 86px;
+        }
+
+        .top_bank_right {
+            width: 68px;
+        }
+
+        .friendly_link-pc {
+            width: 1170px;
+        }
+
+        .mobile .friendly_link {
+            width: 100%;
+        }
+
+        .friendly_link {
+            height: auto;
+            font-size: 14px;
+            margin: 10px auto;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .friendly_link p {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .friendly_link div {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .friendly_link a {
+            font-size: 12px;
+            color: #333333;
+            margin-right: 24px;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 320px) and (max-width: 768px) {
+            .friendly_link-mobile {
+                width: 100%;
+                margin: 10px 14px;
+            }
+
+            .friendly_link p {
+                font-size: 12px;
+            }
+
+            .friendly_link a {
+                margin-right: 14px;
+                margin-bottom: 8px;
+            }
+        }
+
+    </style>
+    <style>
+
+        .gw-copyright.fixed-bottom {
+            height: 120px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            width: 100%;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-content {
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            height: 100%;
+            /* background-color:#FFA084; */
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile {
+            height: 60px;
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile .gw-copyright-content {
+            background-size: contain;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-close-box {
+            background-color: #EEEEEE;
+            color: #101010;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .gw-copyright.fixed-bottom .gw-copyright-close {
+            font-size: 1.3em;
+            height: 30px;
+            width: 32px;
+            margin: auto 5px;
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile {
+            font-size: 12px;
+        }
+
+        .gw-copyright.fixed-bottom.gw-copyright-mobile .gw-copyright-close {
+            margin: auto 2px;
+        }
+    </style>
 </head>
-<body>
+<body class="pc">
+<div class="user-bar  dark  ">
+    <ul class="user-bar-left">
+        <li><a href="/login">登录</a></li>
+        <li><a href="/login">注册</a></li>
+    </ul>
+    <ul class="user-bar-right">
+        <li>
+            <a href="" id="phone-website" title="请扫二维码" data-container="body" data-placement="left" data-html="true"
+               data-trigger="hover"
+               data-content="&lt;img src=&quot;http://.xcx.co.ltd/assets/images/guanwei_share02.png&quot; width=&quot;200&quot; height=&quot;200&quot; onload=&quot;this.src=&#039;https://wei.ltd.com/file/qrcode?format=text&amp;data=&#039; + encodeURIComponent(window.location.href)&quot; /&gt;"
+               data-toggle="popover">
+                <i class="iconfont icon-shouji1"></i>手机网站
+            </a>
+        </li>
+        <li><a href="index#/user"><i class="iconfont icon-huiyuan1"></i>会员中心
+        </a></li>
+    </ul>
+</div>
+
+<!--顶部导航-->
+<div class="gw-browse-module " data-full="" data-fixed-position="" id="gw-module-658996" name="顶部导航"
+     data-anchor-id="anchor-1494551597228-7522"
+     style="background-color:rgb(51, 51, 51);background-repeat:repeat;background-size:auto;">
+
+
+    <div class="gw-browse-module-content clearfix" style="background-repeat:repeat;background-size:auto;">
+        <div class="gw-grid-col grid-col-pc-12">
+            <div class="gw-browse-grid" style="height:88px;">
+                <div class="gw-browse-grid-content">
+                    <div class="gw-browse-container" style="" data-editable="0">
+                        <div class="gw-browse-container-content">
+                            <div class="images-component">
+                                <div class="gw-browse-component" id="module-657120-components-images-1515053517102-9085"
+                                     style="top:33px;left:0;width:93px;height:24px;">
+                                    <style>
+                                        #module-657120-components-images-1515053517102-9085 .gw-image-hoverShadow:hover img {
+                                            box-shadow: 0px 0px 10px 1px #ababab !important;
+                                        }
+
+                                    </style>
+                                    <a style="" href=""><img class="gw-browse-component-content animated bounceInLeft  "
+                                                             style="width:93px;max-width:none;height:24px;max-height:none;opacity:1;"
+                                                             alt="" src="/picture/15150466286480.png"></a>
+                                </div>
+                            </div>
+                            <div class="nav-component">
+                                <div class="gw-browse-component" id="module-657120-components-nav-1515053517103-3449"
+                                     style="top:0;left:515px;width:651px;height:80px;line-height:80px;">
+                                    <style>
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgba(0, 0, 0, 0);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont {
+                                            margin-left: 0;
+                                            margin-right: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont-row {
+                                            margin-left: 0;
+                                            margin-right: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu {
+                                            font-family: 微软雅黑;
+                                            font-size: 14px;
+                                            font-style: normal;
+                                            font-weight: normal;
+                                            background-color: #FFFFFF;
+                                            color: #666666;
+                                            height: 38px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list {
+                                            position: absolute;
+                                            top: 88px;
+                                            margin-left: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list ul {
+                                            background-color: #FFFFFF;
+                                            line-height: 38px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list-row {
+                                            position: absolute;
+                                            top: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list-row ul {
+                                            background-color: #FFFFFF;
+                                            line-height: 38px !important;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list-row ul li {
+                                            margin-left: 0;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .menu-list .triangle_border_up {
+                                            border-bottom-color: #FFFFFF;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu a {
+                                            color: #666666;
+                                            text-decoration: none;
+                                            font-weight: normal;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont:hover .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont-row:hover .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .first-nav-cont:hover .gw-nav {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont:hover {
+                                            margin-left: 0 !important;
+                                            margin-right: 0 !important;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav-cont-row:hover {
+                                            margin-left: 0 !important;
+                                            margin-right: 0 !important;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu:hover {
+                                            background-color: #FFFFFF;
+                                            font-size: 14px;
+                                            height: 38px;
+                                            font-weight: normal;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .sec-menu:hover a {
+                                            color: #000000;
+                                            font-family: 微软雅黑;
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                        }
+
+                                        #module-657120-components-nav-1515053517103-3449 .gw-nav.active {
+                                            width: 130px;
+                                            height: 88px;
+                                            font-family: 微软雅黑;
+                                            font-size: 16px;
+                                            color: rgb(255, 255, 255);
+                                            font-weight: normal;
+                                            font-style: normal;
+                                            text-decoration: none;
+                                            background-color: rgb(255, 192, 1);
+                                            display: inline-block;
+                                            text-align: center;
+                                            line-height: 88px;
+                                        }
+
+                                    </style>
+                                    <div class="module-657120-components-nav-1515053517103-3449 gw-browse-component-content"
+                                    >
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav active" style=""
+                                                                    href="">网站首页</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="guanyuwomen.html">关于我们</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="course.html">私教课程</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="zaixianbaoming.html">在线报名</a></div>
+                                        <div class="gw-nav-cont"><a target="_self" class="gw-nav" style=""
+                                                                    href="zuixindongtai.html">最新动态</a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="courseinfo_container">
+    <div class="col-sm-9 col-xs-12">
+        <h3 th:text="${course_planInfoDTO.getService().getName()}" style="text-align: center"></h3>
+        <table>
+            <tbody>
+            <div style="text-align: center ; border-top: 1px solid #f5f5f5;padding-top: 20px">
+                <img th:src="${course_planInfoDTO.getService().getPic()}">
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">课程详情</h3>
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <span>课程名：</span><span th:text="${course_planInfoDTO.getService().getName()}"></span>  (第<span th:text="${course_planInfoDTO.getTerm()}"></span>期)<br><br>
+                        <span>报名截至日期：</span><span th:text="${course_planInfoDTO.getStartDate()}"></span><br><br>
+                        <span>课程周期：</span><span th:text="${course_planInfoDTO.getCycle()}"></span>个星期<br><br>
+                        <span>上课时间：周</span><span th:text="${course_planInfoDTO.getPlan()}"></span>
+                        <span th:text="${course_planInfoDTO.getStartTime()}"></span>点--
+                        <span th:text="${course_planInfoDTO.getEndTime()}"></span>点<br><br>
+                        <span>课程价格：</span><span th:text="${course_planInfoDTO.getPrice()}"></span>元<br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">课程内容</h3>
+                </div>
+                <div class="panel-body" th:text="${course_planInfoDTO.getService().getContent()}">
+                </div>
+            </div>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">课程教练</h3>
+            </div>
+            <div class="panel-body">
+                <div class="thumbnail">
+                    <img th:src="${course_planInfoDTO.coach.getPic()}" src="${staff.imgsrc}" alt="..."
+                         style="width: 222px;height: 168px">
+                    <div class="caption">
+                        <h3 th:text="${course_planInfoDTO.coach.getName()}"></h3>
+                        <p>特点:</p>
+                        <p th:text="${course_planInfoDTO.coach.getFeature()}"></p>
+                    </div>
+                </div>
+                <div th:switch="${course_planInfoDTO.isexpired}">
+                    <a th:case="true">
+                        <a href="PageServlet?serviceid=${servicedetail.id}&&currentpage=1"
+                           class="btn btn-primary btn-lg active" role="button">点击报名此课程</a>
+                    </a>
+                    <a th:case="false">
+                    <a href=""
+                       class="btn btn-danger btn-lg active" role="button">报名时间已过</a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
