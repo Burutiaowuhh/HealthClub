@@ -40,6 +40,9 @@
         <table tableName="course_plan" domainObjectName="Course_plan" ></table>
         <table tableName="coach" domainObjectName="Coach" ></table>
         <table tableName="service_price" domainObjectName="Service_price" ></table>
+        <table tableName="course_order" domainObjectName="Course_order" ></table>
+        <table tableName="orderid" domainObjectName="Orderid" ></table>
+        <table tableName="member_order" domainObjectName="Member_order" ></table>
 
     </context>
 </generatorConfiguration>

@@ -4,53 +4,53 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /* *
- *ÀàÃû£ºAlipayConfig
- *¹¦ÄÜ£º»ù´¡ÅäÖÃÀà
- *ÏêÏ¸£ºÉèÖÃÕÊ»§ÓÐ¹ØÐÅÏ¢¼°·µ»ØÂ·¾¶
- *ÐÞ¸ÄÈÕÆÚ£º2017-04-05
- *ËµÃ÷£º
- *ÒÔÏÂ´úÂëÖ»ÊÇÎªÁË·½±ãÉÌ»§²âÊÔ¶øÌá¹©µÄÑùÀý´úÂë£¬ÉÌ»§¿ÉÒÔ¸ù¾Ý×Ô¼ºÍøÕ¾µÄÐèÒª£¬°´ÕÕ¼¼ÊõÎÄµµ±àÐ´,²¢·ÇÒ»¶¨ÒªÊ¹ÓÃ¸Ã´úÂë¡£
- *¸Ã´úÂë½ö¹©Ñ§Ï°ºÍÑÐ¾¿Ö§¸¶±¦½Ó¿ÚÊ¹ÓÃ£¬Ö»ÊÇÌá¹©Ò»¸ö²Î¿¼¡£
+ *ç±»åï¼šAlipayConfig
+ *åŠŸèƒ½ï¼šåŸºç¡€é…ç½®ç±»
+ *è¯¦ç»†ï¼šè®¾ç½®å¸æˆ·æœ‰å…³ä¿¡æ¯åŠè¿”å›žè·¯å¾„
+ *ä¿®æ”¹æ—¥æœŸï¼š2017-04-05
+ *è¯´æ˜Žï¼š
+ *ä»¥ä¸‹ä»£ç åªæ˜¯ä¸ºäº†æ–¹ä¾¿å•†æˆ·æµ‹è¯•è€Œæä¾›çš„æ ·ä¾‹ä»£ç ï¼Œå•†æˆ·å¯ä»¥æ ¹æ®è‡ªå·±ç½‘ç«™çš„éœ€è¦ï¼ŒæŒ‰ç…§æŠ€æœ¯æ–‡æ¡£ç¼–å†™,å¹¶éžä¸€å®šè¦ä½¿ç”¨è¯¥ä»£ç ã€‚
+ *è¯¥ä»£ç ä»…ä¾›å­¦ä¹ å’Œç ”ç©¶æ”¯ä»˜å®æŽ¥å£ä½¿ç”¨ï¼Œåªæ˜¯æä¾›ä¸€ä¸ªå‚è€ƒã€‚
  */
 
 public class AlipayConfig {
 	
-//¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ýÇëÔÚÕâÀïÅäÖÃÄúµÄ»ù±¾ÐÅÏ¢¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý¡ý
+//â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“è¯·åœ¨è¿™é‡Œé…ç½®æ‚¨çš„åŸºæœ¬ä¿¡æ¯â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“â†“
 
-	// Ó¦ÓÃID,ÄúµÄAPPID£¬ÊÕ¿îÕËºÅ¼ÈÊÇÄúµÄAPPID¶ÔÓ¦Ö§¸¶±¦ÕËºÅ
+	// åº”ç”¨ID,æ‚¨çš„APPIDï¼Œæ”¶æ¬¾è´¦å·æ—¢æ˜¯æ‚¨çš„APPIDå¯¹åº”æ”¯ä»˜å®è´¦å·
 	public static String app_id = "2016101500694941";
 	
-	// ÉÌ»§Ë½Ô¿£¬ÄúµÄPKCS8¸ñÊ½RSA2Ë½Ô¿
+	// å•†æˆ·ç§é’¥ï¼Œæ‚¨çš„PKCS8æ ¼å¼RSA2ç§é’¥
     public static String merchant_private_key = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDJKUYIS6mDuTc/8PVw/246xN1P9Tr2baPRf3f2qSM2pHHhq3LM5tFN1/0DtLzgJ8yX6AVzi910fPkH7z0tVhoSvR2wF+SRGeGRzMRH9DuZn+RtcXw9eIcupAGytrXSFBYjU+UXymvxBVqyOzpg79lWU1LwhI/qll3wfZdrbfvizacd5H7YaTiFdzimttf5/y2Zjf81sE03JmERfYwbprbptc8zrm7hJ+2643sRnQUyj5ITKujhjm+y0KANaI3RSuBEXLy7HA4c5i6oSF4lWjGvedNQia651pCZN5/Ojnz5/3/hUihz6eojWd9ydzXiEzsbCNJzSNoYnThWSG9Y1DwfAgMBAAECggEADUpm0CF/n65bEiRvcvnNZKChJqlDLgjsa+kKGgfuxatzwr87JIKTjZsZomcMm5rFj7vKsGmrRgkDwxxxZE9uBZLtJTdO6K9XEfT/eumODoZb50c6OC2AcPpxCke8F5cwJ0Fhv4KmQxRhe6kiIEl4iJWUw0Ne5tbsefkySezIWaGyr/PeoQ4vgTW28WwCO/utX6/75aAnz9rWnSjCS+XlHT80a7OarS1Da7cvylLiT7DLupgYZtvtv95agya02hpBOvkroZXihrtmV3oQfb1akIBlDur1gTC+xmWVcqSZARYP77RkA06Wqzed82h1OIHyn4y18DTHEFfz9/+5/oTNoQKBgQD4Bv73LqYuZxJ2gN4be9BjL5/d+kh9IeKjXqa8/UU+OdFy6KBRNozCAkUxoQTBQBhbrcjzz4U5yrPKZ01PjP0oAzjzvb/w4BNaI86oMe0vvG8iDclB0j1SG8gjA6NcKfaNfeW9lnhj7xDOqTqhWNF0K0gNr0TD/G/TWNvY2iyg2QKBgQDPoJ5uL5Ebaw/3w4dnebHYDKxKwlHaQGKxhP9H7Q+0VUwy+N+fkkBSzWS7Gh4zARAE4zScVJaYaqYYIbfq2zydGpF7BYwdcAcmLD2k72om2a5AQmVaGEz6boPz+FJgcnC0j2QoMVyYqXL5Mdvv4d8YFQocVLSM/4CAize7m+6ptwKBgD5pLEEwuNpWT1wIY1tRFYfP1Q97SkBKhYgMajKGHKVi0SR0CttEubib76NkXBjwsvBm03keT+zR59nXkqmg1Zb68JrMtX68M8Jr3jWOkpt/dAuCopDwgUOm//5njPTFDmheNLA3K8Yhwv3tsXYmLlZoCbJ/1vLmE5F/+5oelDpJAoGBAL/wYyXHcWSgZ8WLC1y8Io1wwcHmu9aAmPw0z+4FF/SEugmRCuGwSSiC2fEhpvNNsyphhBxVElbamKtMWIKTpAg0LHNG4I3CJ8nBMkeMUFyT9cNP3fQY7OjCS9e5IyYoBUrWGCgT4d77Ht+BmSm8bAoOQSeJotOJy5iJmr8j2tEnAoGAU2co4Yf9UN3gMpJj8MPpkAsusOS6AonPoQLQ6CDCXN92bhl2wYUrNNF9wcJkn/zkm2VHk9HaoiRrzFGvLmWDAmdxLL/LsSrDGFxbnsehIGKuo2FNVT4PXC/S3ky0Mi05l0S/xXiQxSGgVtniSQS/7udGA3S/Xr8KHqNv/xDu4qQ=";
 	
-	// Ö§¸¶±¦¹«Ô¿,²é¿´µØÖ·£ºhttps://openhome.alipay.com/platform/keyManage.htm ¶ÔÓ¦APPIDÏÂµÄÖ§¸¶±¦¹«Ô¿¡£
+	// æ”¯ä»˜å®å…¬é’¥,æŸ¥çœ‹åœ°å€ï¼šhttps://openhome.alipay.com/platform/keyManage.htm å¯¹åº”APPIDä¸‹çš„æ”¯ä»˜å®å…¬é’¥ã€‚
     public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkh4GaimlYA8NZ1adOKjjJSimBNUMx2TQJcj1AWF2Q2uNNohNqYojUrcCx+MXbRv61AuLZcfwSIyrLhOeteg54Tz9s5ozZoH+D9Ib6U3IAylOFwOelkMYnxmN8G/G4xFyacv0WPK+N2ngC0Nrbb7S3hQjcussmBbG98GneRocJc+RMgQSro+Ljko6/S49KbSH7botGYmZRHojPuK18lo4Z0/dDyktAT4N7u9e3ktqAHPYT6yb6mNeU71YKrlrqJfEF8qCdJO0OujGU0UTx4mRXsuHAHHa5LRqwOzg4ttz9UbDgbvQLdbVnihR9nJFhte6mHhY8AGUf6DXssgJAZ7M8wIDAQAB";
 
-	// ·þÎñÆ÷Òì²½Í¨ÖªÒ³ÃæÂ·¾¶  Ðèhttp://¸ñÊ½µÄÍêÕûÂ·¾¶£¬²»ÄÜ¼Ó?id=123ÕâÀà×Ô¶¨Òå²ÎÊý£¬±ØÐëÍâÍø¿ÉÒÔÕý³£·ÃÎÊ
-	public static String notify_url = "http://localhost:8888/pay";
+	// æœåŠ¡å™¨å¼‚æ­¥é€šçŸ¥é¡µé¢è·¯å¾„  éœ€http://æ ¼å¼çš„å®Œæ•´è·¯å¾„ï¼Œä¸èƒ½åŠ ?id=123è¿™ç±»è‡ªå®šä¹‰å‚æ•°ï¼Œå¿…é¡»å¤–ç½‘å¯ä»¥æ­£å¸¸è®¿é—®
+	public static String notify_url = "http://localhost:8888/profile";
 
-	// Ò³ÃæÌø×ªÍ¬²½Í¨ÖªÒ³ÃæÂ·¾¶ Ðèhttp://¸ñÊ½µÄÍêÕûÂ·¾¶£¬²»ÄÜ¼Ó?id=123ÕâÀà×Ô¶¨Òå²ÎÊý£¬±ØÐëÍâÍø¿ÉÒÔÕý³£·ÃÎÊ
+	// é¡µé¢è·³è½¬åŒæ­¥é€šçŸ¥é¡µé¢è·¯å¾„ éœ€http://æ ¼å¼çš„å®Œæ•´è·¯å¾„ï¼Œä¸èƒ½åŠ ?id=123è¿™ç±»è‡ªå®šä¹‰å‚æ•°ï¼Œå¿…é¡»å¤–ç½‘å¯ä»¥æ­£å¸¸è®¿é—®
 
-	public static String return_url = "http://localhost:8888/pay";
+	public static String return_url = "http://localhost:8888/return_url";
 
-	// Ç©Ãû·½Ê½
+	// ç­¾åæ–¹å¼
 	public static String sign_type = "RSA2";
 	
-	// ×Ö·û±àÂë¸ñÊ½
+	// å­—ç¬¦ç¼–ç æ ¼å¼
 	public static String charset = "utf-8";
 	
-	// Ö§¸¶±¦Íø¹Ø
+	// æ”¯ä»˜å®ç½‘å…³
 	public static String gatewayUrl = "https://openapi.alipaydev.com/gateway.do";
 	
-	// Ö§¸¶±¦Íø¹Ø
+	// æ”¯ä»˜å®ç½‘å…³
 	public static String log_path = "C:\\";
 
 
-//¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡üÇëÔÚÕâÀïÅäÖÃÄúµÄ»ù±¾ÐÅÏ¢¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü¡ü
+//â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘è¯·åœ¨è¿™é‡Œé…ç½®æ‚¨çš„åŸºæœ¬ä¿¡æ¯â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘â†‘
 
     /** 
-     * Ð´ÈÕÖ¾£¬·½±ã²âÊÔ£¨¿´ÍøÕ¾ÐèÇó£¬Ò²¿ÉÒÔ¸Ä³É°Ñ¼ÇÂ¼´æÈëÊý¾Ý¿â£©
-     * @param sWord ÒªÐ´ÈëÈÕÖ¾ÀïµÄÎÄ±¾ÄÚÈÝ
+     * å†™æ—¥å¿—ï¼Œæ–¹ä¾¿æµ‹è¯•ï¼ˆçœ‹ç½‘ç«™éœ€æ±‚ï¼Œä¹Ÿå¯ä»¥æ”¹æˆæŠŠè®°å½•å­˜å…¥æ•°æ®åº“ï¼‰
+     * @param sWord è¦å†™å…¥æ—¥å¿—é‡Œçš„æ–‡æœ¬å†…å®¹
      */
     public static void logResult(String sWord) {
         FileWriter writer = null;

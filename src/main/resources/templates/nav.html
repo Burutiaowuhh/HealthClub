@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body th:fragment="shownav">
+<div class="user-bar  dark  ">
+    <ul class="user-bar-left">
+        <a class="navbar-brand" href="/" style="color: white;margin-left: 20px">健身俱乐部</a>
+    </ul>
+    <ul class="user-bar-right">
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+            <li th:if="${session.user==null}"><a href="/login" style="color: white">登录</a></li>
+            <li th:if="${session.user==null}"><a href="/login" style="color: white">注册</a></li>
+
+            <li class="dropdown" th:if="${session.user!=null}">
+                <a href="#" id="changecolor" onclick="changecolor();" onblur="huanyuan();" class="dropdown-toggle"
+                   style="color: white;" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false" th:text="${session.user.getNickname()}">
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/profile/order">我的订单</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/profile/info">我的资料</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="javascript:logout()">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+    </ul>
+</div>
+<script type="text/javascript">
+    function logout() {
+        if (confirm('您确定要退出系统吗？')) {
+            // window.location.href="${pageContext.request.contextPath}/custom?action=logout"
+        }
+    }
+</script>
+</body>
+</html>

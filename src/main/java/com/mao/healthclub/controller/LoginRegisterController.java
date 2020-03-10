@@ -40,6 +40,8 @@ public class LoginRegisterController {
 
         Integer i = logRegService.register(custom);
         if (i==1){
+            LoginCustom loginCustom = logRegService.login(nickname, password);
+            request.getSession().setAttribute("user",loginCustom);
             ReturnInfo returnInfo=new ReturnInfo();
             returnInfo.setCode(0);
             returnInfo.setMsg("success");

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/style-202002171538.css">
+
+    <script type="application/javascript" src="bootstrap3/js/jquery.min.js"></script>
+    <script type="application/javascript" src="bootstrap3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="pc">
+<div th:insert="~{nav :: shownav}"></div>
+
+<div class="container-fluid main profile">
+    <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" style="width: 15%;margin-top: 25px;margin-left: 60px;">
+            <div class="list-group section">
+                        <a class="list-group-item active"
+                           href="profile.jsp?action=order&&userid=${sessionScope.user.userId}">我的订单</a>
+                        <a class="list-group-item" href="profile.jsp?action=info&&userid=${sessionScope.user.userId}">我的资料</a>
+                        <a class="list-group-item " href="profile.jsp?action=order&&userid=${sessionScope.user.userId}">我的订单</a>
+                        <a class="list-group-item active"
+                           href="profile.jsp?action=info&&userid=${sessionScope.user.userId}">我的资料</a>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的订单</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-hover" style="text-align: center">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center">序号</th>
+                                    <th style="text-align: center">服务名称</th>
+                                    <th style="text-align: center" >联系人</th>
+                                    <th style="text-align: center">联系电话</th>
+                                    <th style="text-align: center">服务日期</th>
+                                    <th style="text-align: center">价格</th>
+                                    <th style="text-align: center">订单状态</th>
+                                    <th style="text-align: center">详细信息</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                            <tr class="warning">
+                                                <td>${orderstatus.index+1}</td>
+                                                <td>${order.servername}</td>
+                                                <td>${order.liaison_name}</td>
+                                                <td>${order.liaison_phone}</td>
+                                                <td>${order.serverdatestr}</td>
+                                                <td>${order.amount}￥</td>
+                                                <td>审核中</td>
+                                                <td><a>
+                                                    <button type="button" class="btn btn-danger btn-xs">详情</button>
+                                                </a></td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td>${orderstatus.index+1}</td>
+                                                <td>${order.servername}</td>
+                                                <td>${order.liaison_name}</td>
+                                                <td>${order.liaison_phone}</td>
+                                                <td>${order.serverdatestr}</td>
+                                                <td>${order.amount}￥</td>
+                                                <td>审核通过</td>
+                                                <td><a>
+                                                    <button type="button" class="btn btn-danger btn-xs">详情</button>
+                                                </a></td>
+                                            </tr>
+                                            <tr class="info">
+                                                <td>${orderstatus.index+1}</td>
+                                                <td>${order.servername}</td>
+                                                <td>${order.liaison_name}</td>
+                                                <td>${order.liaison_phone}</td>
+                                                <td>${order.serverdatestr}</td>
+                                                <td>${order.amount}￥</td>
+                                                <td>服务结束</td>
+                                                <td><a>
+                                                    <button type="button" class="btn btn-danger btn-xs">详情</button>
+                                                </a></td>
+                                            </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">我的资料</h3>
+                            </div>
+                            <div class="panel-body">
+                                我姓
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
